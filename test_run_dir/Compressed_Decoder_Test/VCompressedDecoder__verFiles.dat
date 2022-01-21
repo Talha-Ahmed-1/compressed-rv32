@@ -1,0 +1,12 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "--cc CompressedDecoder.v --assert -Wno-fatal -Wno-WIDTH -Wno-STMTDLY -O1 --top-module CompressedDecoder +define+TOP_TYPE=VCompressedDecoder +define+PRINTF_COND=!CompressedDecoder.reset +define+STOP_COND=!CompressedDecoder.reset -CFLAGS -Wno-undefined-bool-conversion -O1 -DTOP_TYPE=VCompressedDecoder -DVL_USER_FINISH -include VCompressedDecoder.h -Mdir /home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test --exe /home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/CompressedDecoder-harness.cpp"
+T      7118  4858338  1642746783 "/home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/VCompressedDecoder.cpp"
+T      2946  4858337  1642746783 "/home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/VCompressedDecoder.h"
+T      2334  4858340  1642746783 "/home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/VCompressedDecoder.mk"
+T       634  4858336  1642746783 "/home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/VCompressedDecoder__Syms.cpp"
+T      1040  4858335  1642746783 "/home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/VCompressedDecoder__Syms.h"
+T       717  4858341  1642746783 "/home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/VCompressedDecoder__ver.d"
+T         0        0  1642746783 "/home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/VCompressedDecoder__verFiles.dat"
+T      1121  4858339  1642746783 "/home/talha/compressed-rv32/test_run_dir/Compressed_Decoder_Test/VCompressedDecoder_classes.mk"
+S   6184696   789560  1616064573 "/usr/local/bin/verilator_bin"
+S      2101  4858331  1642746783 "CompressedDecoder.v"

@@ -1,0 +1,17 @@
+[
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~CompressedDecoder|CompressedDecoder>io_instOut",
+    "sources":[
+      "~CompressedDecoder|CompressedDecoder>io_instIn"
+    ]
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"test_run_dir/Compressed_Decoder_Test"
+  }
+]
