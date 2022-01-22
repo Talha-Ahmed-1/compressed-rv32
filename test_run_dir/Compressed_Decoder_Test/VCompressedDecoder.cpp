@@ -71,7 +71,7 @@ void VCompressedDecoder::_initial__TOP__1(VCompressedDecoder__Syms* __restrict v
     VL_DEBUG_IF(VL_PRINTF("    VCompressedDecoder::_initial__TOP__1\n"); );
     VCompressedDecoder* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    // INITIAL at CompressedDecoder.v:31
+    // INITIAL at CompressedDecoder.v:41
     vlTOPp->io_compressed = 1U;
 }
 
@@ -79,53 +79,61 @@ VL_INLINE_OPT void VCompressedDecoder::_combo__TOP__2(VCompressedDecoder__Syms* 
     VL_DEBUG_IF(VL_PRINTF("    VCompressedDecoder::_combo__TOP__2\n"); );
     VCompressedDecoder* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->io_instOut = ((0x8c61U == (0xfc63U & vlTOPp->io_instIn))
-			   ? (0x1c33U | ((0x1e0000U 
-					  & (((IData)(8U) 
-					      + (7U 
-						 & (vlTOPp->io_instIn 
-						    >> 7U))) 
-					     << 0x11U)) 
-					 | ((0x1e000U 
-					     & (((IData)(8U) 
-						 + 
-						 (7U 
-						  & (vlTOPp->io_instIn 
-						     >> 2U))) 
-						<< 0xdU)) 
-					    | (0x3c0U 
-					       & (((IData)(8U) 
-						   + 
-						   (7U 
-						    & (vlTOPp->io_instIn 
-						       >> 7U))) 
-						  << 6U)))))
-			   : ((0x8c41U == (0xfc63U 
-					   & vlTOPp->io_instIn))
-			       ? (0x1833U | ((0x1e0000U 
-					      & (((IData)(8U) 
-						  + 
-						  (7U 
-						   & (vlTOPp->io_instIn 
-						      >> 7U))) 
-						 << 0x11U)) 
-					     | ((0x1e000U 
+    vlTOPp->io_instOut = ((0x4000U == (0xe003U & vlTOPp->io_instIn))
+			   ? (0x83U | ((0x20000U & 
+					(vlTOPp->io_instIn 
+					 << 0xcU)) 
+				       | ((0x1c000U 
+					   & (vlTOPp->io_instIn 
+					      << 4U)) 
+					  | ((0x2000U 
+					      & (vlTOPp->io_instIn 
+						 << 7U)) 
+					     | ((0xf00U 
 						 & (((IData)(8U) 
 						     + 
 						     (7U 
 						      & (vlTOPp->io_instIn 
-							 >> 2U))) 
-						    << 0xdU)) 
-						| (0x3c0U 
+							 >> 7U))) 
+						    << 8U)) 
+						| (0x3cU 
 						   & (((IData)(8U) 
 						       + 
 						       (7U 
 							& (vlTOPp->io_instIn 
-							   >> 7U))) 
-						      << 6U)))))
-			       : ((0x8c21U == (0xfc63U 
+							   >> 2U))) 
+						      << 2U)))))))
+			   : ((0xc000U == (0xe003U 
+					   & vlTOPp->io_instIn))
+			       ? (0x823U | ((0x200000U 
+					     & (vlTOPp->io_instIn 
+						<< 0x10U)) 
+					    | ((0x100000U 
+						& (vlTOPp->io_instIn 
+						   << 8U)) 
+					       | ((0xf0000U 
+						   & (((IData)(8U) 
+						       + 
+						       (7U 
+							& (vlTOPp->io_instIn 
+							   >> 2U))) 
+						      << 0x10U)) 
+						  | ((0xf000U 
+						      & (((IData)(8U) 
+							  + 
+							  (7U 
+							   & (vlTOPp->io_instIn 
+							      >> 7U))) 
+							 << 0xcU)) 
+						     | ((0x300U 
+							 & (vlTOPp->io_instIn 
+							    >> 2U)) 
+							| (0x80U 
+							   & (vlTOPp->io_instIn 
+							      << 1U))))))))
+			       : ((0x8c61U == (0xfc63U 
 					       & vlTOPp->io_instIn))
-				   ? (0x1033U | ((0x1e0000U 
+				   ? (0x1c33U | ((0x1e0000U 
 						  & (((IData)(8U) 
 						      + 
 						      (7U 
@@ -146,43 +154,91 @@ VL_INLINE_OPT void VCompressedDecoder::_combo__TOP__2(VCompressedDecoder__Syms* 
 							    & (vlTOPp->io_instIn 
 							       >> 7U))) 
 							  << 6U)))))
-				   : ((0x8c01U == (0xfc63U 
+				   : ((0x8c41U == (0xfc63U 
 						   & vlTOPp->io_instIn))
-				       ? (0x1000033U 
-					  | ((0x78000U 
-					      & (((IData)(8U) 
-						  + 
-						  (7U 
+				       ? (0x1833U | 
+					  ((0x1e0000U 
+					    & (((IData)(8U) 
+						+ (7U 
 						   & (vlTOPp->io_instIn 
 						      >> 7U))) 
-						 << 0xfU)) 
-					     | ((0x7800U 
+					       << 0x11U)) 
+					   | ((0x1e000U 
+					       & (((IData)(8U) 
+						   + 
+						   (7U 
+						    & (vlTOPp->io_instIn 
+						       >> 2U))) 
+						  << 0xdU)) 
+					      | (0x3c0U 
 						 & (((IData)(8U) 
 						     + 
 						     (7U 
 						      & (vlTOPp->io_instIn 
-							 >> 2U))) 
-						    << 0xbU)) 
-						| (0x3c0U 
-						   & (((IData)(8U) 
-						       + 
-						       (7U 
-							& (vlTOPp->io_instIn 
-							   >> 7U))) 
-						      << 6U)))))
-				       : ((1U == (0xffffU 
-						  & vlTOPp->io_instIn))
-					   ? 0x13U : 
-					  ((0x9002U 
-					    == (0xffffU 
-						& vlTOPp->io_instIn))
-					    ? 0x13U
-					    : ((0U 
-						== 
-						(0xffffU 
-						 & vlTOPp->io_instIn))
-					        ? 0U
-					        : vlTOPp->io_instIn)))))));
+							 >> 7U))) 
+						    << 6U)))))
+				       : ((0x8c21U 
+					   == (0xfc63U 
+					       & vlTOPp->io_instIn))
+					   ? (0x1033U 
+					      | ((0x1e0000U 
+						  & (((IData)(8U) 
+						      + 
+						      (7U 
+						       & (vlTOPp->io_instIn 
+							  >> 7U))) 
+						     << 0x11U)) 
+						 | ((0x1e000U 
+						     & (((IData)(8U) 
+							 + 
+							 (7U 
+							  & (vlTOPp->io_instIn 
+							     >> 2U))) 
+							<< 0xdU)) 
+						    | (0x3c0U 
+						       & (((IData)(8U) 
+							   + 
+							   (7U 
+							    & (vlTOPp->io_instIn 
+							       >> 7U))) 
+							  << 6U)))))
+					   : ((0x8c01U 
+					       == (0xfc63U 
+						   & vlTOPp->io_instIn))
+					       ? (0x1000033U 
+						  | ((0x78000U 
+						      & (((IData)(8U) 
+							  + 
+							  (7U 
+							   & (vlTOPp->io_instIn 
+							      >> 7U))) 
+							 << 0xfU)) 
+						     | ((0x7800U 
+							 & (((IData)(8U) 
+							     + 
+							     (7U 
+							      & (vlTOPp->io_instIn 
+								 >> 2U))) 
+							    << 0xbU)) 
+							| (0x3c0U 
+							   & (((IData)(8U) 
+							       + 
+							       (7U 
+								& (vlTOPp->io_instIn 
+								   >> 7U))) 
+							      << 6U)))))
+					       : ((1U 
+						   == 
+						   (0xffffU 
+						    & vlTOPp->io_instIn))
+						   ? 0x13U
+						   : 
+						  ((0U 
+						    == 
+						    (0xffffU 
+						     & vlTOPp->io_instIn))
+						    ? 0U
+						    : vlTOPp->io_instIn))))))));
 }
 
 void VCompressedDecoder::_eval(VCompressedDecoder__Syms* __restrict vlSymsp) {

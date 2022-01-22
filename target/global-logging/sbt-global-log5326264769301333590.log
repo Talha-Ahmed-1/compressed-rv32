@@ -1,3 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(testOnly CompressedDecoderTest, Some(d58586b3-3e06-48c3-a714-85eebce2e6c5), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / testOnly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/talha/compressed-rv32/target/scala-2.12/classes ...[0m
 [0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:14: inferred type arguments [Object] do not conform to method apply's type parameter bounds [T <: chisel3.Bits][0m
 [0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
 [0m[[0m[31merror[0m] [0m[0m             ^[0m
@@ -52,3 +56,6 @@
 [0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
 [0m[[0m[31merror[0m] [0m[0m                                                                                                                                   ^[0m
 [0m[[0m[31merror[0m] [0m[0m11 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 2 s, completed Jan 21, 2022 4:50:12 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
