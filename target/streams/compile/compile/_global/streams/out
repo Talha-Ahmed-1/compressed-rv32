@@ -1,54 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:14: inferred type arguments [Object] do not conform to method apply's type parameter bounds [T <: chisel3.Bits][0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:18: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : String("b00000")[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                 ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:37: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.Bool[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:51: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.Bool[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:57: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:62: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:77: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                            ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:89: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:107: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.Bool[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                          ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:118: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:54:132: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : chisel3.UInt[0m
-[0m[[0m[31merror[0m] [0m[0m required: T[0m
-[0m[[0m[31merror[0m] [0m[0m    def SW = Cat("b00000", io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0m11 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:66:38: not found: value LW[0m
+[0m[[0m[31merror[0m] [0m[0m        (io.instIn(15,0) === CLW) -> LW,[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:70:38: not found: value SW[0m
+[0m[[0m[31merror[0m] [0m[0m        (io.instIn(15,0) === CSW) -> SW,[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

@@ -1,0 +1,19 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(testOnly CompressedDecoderTest -- -DwriteVcd=1, Some(90305cd9-e80b-4b28-8dc2-3a67ae58fbdd), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / testOnly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/talha/compressed-rv32/target/scala-2.12/classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/talha/compressed-rv32/target/scala-2.12/test-classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCompressedDecoderTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- Compressed Decoder Test *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  CompressedDecoder.io_instOut=4356659 (0x427a33) did not equal expected=8713267 (0x84f433) (lines in CompressedDecoderTest.scala: 11) (CompressedDecoderTest.scala:14)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 4 seconds, 579 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 1, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	CompressedDecoderTest[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtestOnly[0m) sbt.TestsFailedException: Tests unsuccessful[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 7 s, completed Jan 22, 2022 7:05:23 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[0minfo[0m] [0m[0mshutting down sbt server[0m

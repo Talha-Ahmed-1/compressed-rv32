@@ -10,6 +10,7 @@
 
 #include "verilated.h"
 class VCompressedDecoder__Syms;
+class VerilatedVcd;
 
 //----------
 
@@ -34,9 +35,11 @@ VL_MODULE(VCompressedDecoder) {
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
+    VL_SIG(__Vm_traceActivity,31,0);
     
     // INTERNAL VARIABLES
     // Internals; generally not touched by application code
+    //char	__VpadToAlign28[4];
     VCompressedDecoder__Syms*	__VlSymsp;		// Symbol table
     
     // PARAMETERS
@@ -53,6 +56,8 @@ VL_MODULE(VCompressedDecoder) {
     VCompressedDecoder(const char* name="TOP");
     /// Destroy the model; called (often implicitly) by application code
     ~VCompressedDecoder();
+    /// Trace signals in the model; called by application code
+    void trace (VerilatedVcdC* tfp, int levels, int options=0);
     
     // USER METHODS
     
@@ -70,7 +75,8 @@ VL_MODULE(VCompressedDecoder) {
   private:
     static QData	_change_request(VCompressedDecoder__Syms* __restrict vlSymsp);
   public:
-    static void	_combo__TOP__2(VCompressedDecoder__Syms* __restrict vlSymsp);
+    static void	_combo__TOP__1(VCompressedDecoder__Syms* __restrict vlSymsp);
+    static void	_combo__TOP__3(VCompressedDecoder__Syms* __restrict vlSymsp);
   private:
     void	_configure_coverage(VCompressedDecoder__Syms* __restrict vlSymsp, bool first);
     void	_ctor_var_reset();
@@ -78,7 +84,16 @@ VL_MODULE(VCompressedDecoder) {
     static void	_eval(VCompressedDecoder__Syms* __restrict vlSymsp);
     static void	_eval_initial(VCompressedDecoder__Syms* __restrict vlSymsp);
     static void	_eval_settle(VCompressedDecoder__Syms* __restrict vlSymsp);
-    static void	_initial__TOP__1(VCompressedDecoder__Syms* __restrict vlSymsp);
+    static void	_settle__TOP__2(VCompressedDecoder__Syms* __restrict vlSymsp);
+    static void	traceChgThis(VCompressedDecoder__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);
+    static void	traceChgThis__2(VCompressedDecoder__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);
+    static void	traceFullThis(VCompressedDecoder__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);
+    static void	traceFullThis__1(VCompressedDecoder__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);
+    static void	traceInitThis(VCompressedDecoder__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);
+    static void	traceInitThis__1(VCompressedDecoder__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);
+    static void traceInit (VerilatedVcd* vcdp, void* userthis, uint32_t code);
+    static void traceFull (VerilatedVcd* vcdp, void* userthis, uint32_t code);
+    static void traceChg  (VerilatedVcd* vcdp, void* userthis, uint32_t code);
 } VL_ATTR_ALIGNED(128);
 
 #endif  /*guard*/

@@ -1,6 +1,14 @@
 [
   {
     "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~CompressedDecoder|CompressedDecoder>io_compressed",
+    "sources":[
+      "~CompressedDecoder|CompressedDecoder>io_instIn",
+      "~CompressedDecoder|CompressedDecoder>io_instOut"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
     "sink":"~CompressedDecoder|CompressedDecoder>io_instOut",
     "sources":[
       "~CompressedDecoder|CompressedDecoder>io_instIn"

@@ -32,7 +32,7 @@ object compressed{
     def CXOR      = BitPat("b100011???01???01")
     def CSUB      = BitPat("b100011???00???01")
     def CNOP      = BitPat("b0000000000000001")
-    // def CEBREAK   = BitPat("b1001000000000010")
+    def CEBREAK   = BitPat("b1001000000000010")
     def CILLEGAL  = BitPat("b0000000000000000")
 }
 
@@ -47,18 +47,27 @@ class CDecoderIO extends Bundle{
 class CompressedDecoder extends Module{
     val io = IO(new CDecoderIO)
 
-    val RS1 = WireInit(io.instIn(4,2) + 8.U)
-    val RD_RS2 = WireInit(io.instIn(9,7) + 8.U)
+    val RS1 = Wire(UInt(5.W))
+    RS1 := io.instIn(4,2) + 8.U
+    val RD_RS2 = Wire(UInt(5.W))
+    RD_RS2 := io.instIn(9,7) + 8.U
 
-    def LW = Cat(io.instIn(5), io.instIn(12,10), io.instIn(6), "b00".U, RD_RS2, "b010".U, RS1, "b0000011".U)
-    def SW = Cat("b00000".U, io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)
+    // def LW      = Cat(io.instIn(5), io.instIn(12,10), io.instIn(6), "b00".U, RD_RS2, "b010".U, RS1, "b0000011".U)
+    // def SW      = Cat("b00000".U, io.instIn(5), io.instIn(12), RS1, RD_RS2, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)
+    def AND     = Cat("b0000000".U, RD_RS2, RS1, "b111".U, RD_RS2, ("b0110011".U)(7.W))
+    def OR      = Cat("b0000000".U, RD_RS2, RS1, "b110".U, RD_RS2, ("b0110011".U)(7.W))
+    def XOR     = Cat("b0000000".U, RD_RS2, RS1, "b100".U, RD_RS2, ("b0110011".U)(7.W))
+    def SUB     = Cat("b0100000".U, RD_RS2, RS1, ("b000".U)(3.W), RD_RS2, ("b0110011".U)(7.W))
+    def NOP     = "h00000013".U
+    def EBREAK  = "h00100073".U
+    def ILLEGAL = 0.U
 
     val cases = Array(
-        (io.instIn(15,0) === CLW) -> LW,
+        // (io.instIn(15,0) === CLW) -> LW,
         // (io.instIn(15,0) === CFLW) -> ,
         // (io.instIn(15,0) === CLWSP) -> ,
         // (io.instIn(15,0) === CFLWSP) -> ,
-        (io.instIn(15,0) === CSW) -> SW,
+        // (io.instIn(15,0) === CSW) -> SW,
         // (io.instIn(15,0) === CFSW) -> ,
         // (io.instIn(15,0) === CSWSP) -> ,
         // (io.instIn(15,0) === CFSWSP) -> ,
@@ -79,15 +88,15 @@ class CompressedDecoder extends Module{
         // (io.instIn(15,0) === CANDI) -> ,
         // (io.instIn(15,0) === CMV) -> Cat("b0000000".U, RD_RS2, RS1, "b000".U, RD_RS2, "b0110011".U),
         // (io.instIn(15,0) === CADD) -> Cat("b0000000".U, RD_RS2, RS1, "b000".U, RD_RS2, "b0110011".U),
-        (io.instIn(15,0) === CAND) -> Cat("b0000000".U, RD_RS2, RS1, "b111".U, RD_RS2, "b0110011".U),
-        (io.instIn(15,0) === COR) -> Cat("b0000000".U, RD_RS2, RS1, "b110".U, RD_RS2, "b0110011".U),
-        (io.instIn(15,0) === CXOR) -> Cat("b0000000".U, RD_RS2, RS1, "b100".U, RD_RS2, "b0110011".U),
-        (io.instIn(15,0) === CSUB) -> Cat("b0100000".U, RD_RS2, RS1, "b000".U, RD_RS2, "b0110011".U),
-        (io.instIn(15,0) === CNOP) -> "h00000013".U,
-        // (io.instIn(15,0) === CEBREAK) -> "h00000013".U,
-        (io.instIn(15,0) === CILLEGAL) -> 0.U)
+        (io.instIn(15,0) === CAND) -> AND,
+        (io.instIn(15,0) === COR) -> OR,
+        (io.instIn(15,0) === CXOR) -> XOR,
+        (io.instIn(15,0) === CSUB) -> SUB,
+        (io.instIn(15,0) === CNOP) -> NOP,
+        (io.instIn(15,0) === CEBREAK) -> EBREAK,
+        (io.instIn(15,0) === CILLEGAL) -> ILLEGAL)
 
     io.instOut := MuxCase(io.instIn, cases)
-    io.compressed := 1.B
+    io.compressed := io.instIn =/= io.instOut
 
 }

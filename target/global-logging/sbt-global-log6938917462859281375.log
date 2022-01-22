@@ -1,0 +1,14 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(testOnly CompressedDecoderTest -- -DwriteVcd=1, Some(709418e6-6cf2-4fc0-8ead-2a8375344d10), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / testOnly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/talha/compressed-rv32/target/scala-2.12/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:66:38: not found: value LW[0m
+[0m[[0m[31merror[0m] [0m[0m        (io.instIn(15,0) === CLW) -> LW,[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:70:38: not found: value SW[0m
+[0m[[0m[31merror[0m] [0m[0m        (io.instIn(15,0) === CSW) -> SW,[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 1 s, completed Jan 22, 2022 7:41:22 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
