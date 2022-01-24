@@ -1,7 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:66:38: not found: value LW[0m
-[0m[[0m[31merror[0m] [0m[0m        (io.instIn(15,0) === CLW) -> LW,[0m
-[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/CompressedDecoder.scala:70:38: not found: value SW[0m
-[0m[[0m[31merror[0m] [0m[0m        (io.instIn(15,0) === CSW) -> SW,[0m
-[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/InstAligner.scala:46:26: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Int(1)[0m
+[0m[[0m[31merror[0m] [0m[0m required: chisel3.Data[0m
+[0m[[0m[31merror[0m] [0m[0m                case2 := 1[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

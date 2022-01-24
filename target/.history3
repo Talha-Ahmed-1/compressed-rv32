@@ -1,3 +1,4 @@
 1642746743893:testOnly CompressedDecoder
 1642746779427:testOnly CompressedDecoderTest
 1642859982867:testOnly CompressedDecoderTest -- -DwriteVcd=1
+1643034015135:testOnly InstAlignerTest -- -DwriteVcd=1

@@ -1,0 +1,25 @@
+[
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~InstAligner|InstAligner>io_instOut",
+    "sources":[
+      "~InstAligner|InstAligner>io_instIn"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~InstAligner|InstAligner>io_pcOut",
+    "sources":[
+      "~InstAligner|InstAligner>io_pcIn",
+      "~InstAligner|InstAligner>io_instIn"
+    ]
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"test_run_dir/Instruction_Aligner_Test"
+  }
+]

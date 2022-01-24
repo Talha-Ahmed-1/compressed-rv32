@@ -9,9 +9,12 @@ class CompressedDecoderTest extends FreeSpec with ChiselScalatestTester {
 
   "Compressed Decoder Test" in {
     test(new CompressedDecoder()).withAnnotations(Seq(VerilatorBackendAnnotation)){ c =>
-      c.io.instIn.poke("b1001000000000010".U)
-      c.clock.step(1)
-      // c.io.instOut.expect("h40848433".U)
+      // c.io.instIn.poke("h94AA9426".U)
+      // c.clock.step(1)
+      // c.io.instOut.expect("h9426".U)
     }
   }
 }
+
+// 0x00009426
+// 0x000094AA
