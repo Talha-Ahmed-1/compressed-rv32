@@ -39,7 +39,9 @@ void VInstAligner::traceChgThis__2(VInstAligner__Syms* __restrict vlSymsp, Veril
     if (0 && vcdp && c) {}  // Prevent unused
     // Body
     {
-	vcdp->chgBit  (c+1,(vlTOPp->InstAligner__DOT__case2));
+	vcdp->chgBit  (c+1,(vlTOPp->InstAligner__DOT__case1));
+	vcdp->chgBit  (c+2,(vlTOPp->InstAligner__DOT__case2));
+	vcdp->chgBus  (c+3,(vlTOPp->InstAligner__DOT__instReg),32);
     }
 }
 
@@ -49,13 +51,11 @@ void VInstAligner::traceChgThis__3(VInstAligner__Syms* __restrict vlSymsp, Veril
     if (0 && vcdp && c) {}  // Prevent unused
     // Body
     {
-	vcdp->chgBit  (c+2,(vlTOPp->clock));
-	vcdp->chgBit  (c+3,(vlTOPp->reset));
-	vcdp->chgBus  (c+4,(vlTOPp->io_instIn),32);
-	vcdp->chgBus  (c+5,(vlTOPp->io_instOut),32);
-	vcdp->chgBus  (c+6,(vlTOPp->io_pcIn),32);
-	vcdp->chgBus  (c+7,(vlTOPp->io_pcOut),32);
-	vcdp->chgBus  (c+8,((0xffffU & (vlTOPp->io_instIn 
-					>> 0x10U))),16);
+	vcdp->chgBit  (c+4,(vlTOPp->clock));
+	vcdp->chgBit  (c+5,(vlTOPp->reset));
+	vcdp->chgBus  (c+6,(vlTOPp->io_instIn),32);
+	vcdp->chgBus  (c+7,(vlTOPp->io_instOut),32);
+	vcdp->chgBus  (c+8,(vlTOPp->io_pcIn),32);
+	vcdp->chgBus  (c+9,(vlTOPp->io_pcOut),32);
     }
 }

@@ -33,20 +33,25 @@ VL_MODULE(VInstAligner) {
     
     // LOCAL SIGNALS
     // Internals; generally not touched by application code
+    VL_SIG8(InstAligner__DOT__case1,0,0);
     VL_SIG8(InstAligner__DOT__case2,0,0);
-    VL_SIG8(InstAligner__DOT___T,0,0);
-    VL_SIG8(InstAligner__DOT___GEN_3,0,0);
-    //char	__VpadToAlign27[1];
+    VL_SIG8(InstAligner__DOT___GEN_10,0,0);
+    VL_SIG8(InstAligner__DOT___T_7,0,0);
+    VL_SIG8(InstAligner__DOT___GEN_14,0,0);
+    //char	__VpadToAlign29[3];
+    VL_SIG(InstAligner__DOT__instReg,31,0);
+    VL_SIG(InstAligner__DOT___GEN_7,31,0);
+    VL_SIG(InstAligner__DOT___GEN_8,31,0);
+    VL_SIG(InstAligner__DOT___GEN_9,31,0);
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
     VL_SIG8(__Vclklast__TOP__clock,0,0);
-    //char	__VpadToAlign33[3];
+    //char	__VpadToAlign53[3];
     VL_SIG(__Vm_traceActivity,31,0);
     
     // INTERNAL VARIABLES
     // Internals; generally not touched by application code
-    //char	__VpadToAlign44[4];
     VInstAligner__Syms*	__VlSymsp;		// Symbol table
     
     // PARAMETERS
@@ -92,6 +97,7 @@ VL_MODULE(VInstAligner) {
     static void	_eval_settle(VInstAligner__Syms* __restrict vlSymsp);
     static void	_sequent__TOP__1(VInstAligner__Syms* __restrict vlSymsp);
     static void	_settle__TOP__2(VInstAligner__Syms* __restrict vlSymsp);
+    static void	_settle__TOP__4(VInstAligner__Syms* __restrict vlSymsp);
     static void	traceChgThis(VInstAligner__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);
     static void	traceChgThis__2(VInstAligner__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);
     static void	traceChgThis__3(VInstAligner__Syms* __restrict vlSymsp, VerilatedVcd* vcdp, uint32_t code);

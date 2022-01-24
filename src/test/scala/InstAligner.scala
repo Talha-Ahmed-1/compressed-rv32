@@ -11,8 +11,13 @@ class InstAlignerTest extends FreeSpec with ChiselScalatestTester {
     test(new InstAligner()).withAnnotations(Seq(VerilatorBackendAnnotation)){ c =>
     // Case 2
       c.io.instIn.poke("h04339426".U)
+      c.io.pcIn.poke(12.U)
       c.clock.step(1)
+      c.io.pcIn.poke(c.io.pcOut.peek)
       c.io.instIn.poke("h952E0094".U)
+      c.clock.step(1)
+      c.io.pcIn.poke(c.io.pcOut.peek)
+      c.io.instIn.poke("h00940433".U)
       c.clock.step(100)
     //Case1
       // c.io.instIn.poke("h94AA9426".U)

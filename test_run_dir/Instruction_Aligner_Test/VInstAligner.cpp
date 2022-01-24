@@ -75,103 +75,255 @@ VL_INLINE_OPT void VInstAligner::_sequent__TOP__1(VInstAligner__Syms* __restrict
     //char	__VpadToAlign5[3];
     // Body
     __Vdly__InstAligner__DOT__case2 = vlTOPp->InstAligner__DOT__case2;
-    // ALWAYS at InstAligner.v:25
+    // ALWAYS at InstAligner.v:44
+    vlTOPp->InstAligner__DOT__case1 = ((~ (IData)(vlTOPp->reset)) 
+				       & ((IData)(vlTOPp->InstAligner__DOT___T_7)
+					   ? (IData)(vlTOPp->InstAligner__DOT___GEN_10)
+					   : ((IData)(vlTOPp->InstAligner__DOT__case2)
+					       ? ((3U 
+						   == 
+						   (3U 
+						    & (vlTOPp->io_instIn 
+						       >> 0x10U))) 
+						  & (IData)(vlTOPp->InstAligner__DOT___GEN_10))
+					       : (IData)(vlTOPp->InstAligner__DOT___GEN_10))));
     if (vlTOPp->reset) {
 	__Vdly__InstAligner__DOT__case2 = 0U;
     } else {
-	if (vlTOPp->InstAligner__DOT___T) {
-	    __Vdly__InstAligner__DOT__case2 = vlTOPp->InstAligner__DOT___GEN_3;
+	if (vlTOPp->InstAligner__DOT___T_7) {
+	    __Vdly__InstAligner__DOT__case2 = vlTOPp->InstAligner__DOT___GEN_14;
 	} else {
 	    if (vlTOPp->InstAligner__DOT__case2) {
-		__Vdly__InstAligner__DOT__case2 = 0U;
+		__Vdly__InstAligner__DOT__case2 = (
+						   (3U 
+						    == 
+						    (3U 
+						     & (vlTOPp->io_instIn 
+							>> 0x10U))) 
+						   & (3U 
+						      == 
+						      (3U 
+						       & (vlTOPp->io_instIn 
+							  >> 0x10U))));
 	    }
 	}
     }
+    vlTOPp->InstAligner__DOT__instReg = ((IData)(vlTOPp->reset)
+					  ? vlTOPp->io_instIn
+					  : ((IData)(vlTOPp->InstAligner__DOT___T_7)
+					      ? (((3U 
+						   != 
+						   (3U 
+						    & vlTOPp->io_instIn)) 
+						  & (3U 
+						     == 
+						     (3U 
+						      & (vlTOPp->io_instIn 
+							 >> 0x10U))))
+						  ? vlTOPp->io_instIn
+						  : vlTOPp->InstAligner__DOT___GEN_8)
+					      : ((IData)(vlTOPp->InstAligner__DOT__case2)
+						  ? 
+						 ((3U 
+						   != 
+						   (3U 
+						    & (vlTOPp->io_instIn 
+						       >> 0x10U)))
+						   ? vlTOPp->InstAligner__DOT___GEN_8
+						   : 
+						  ((3U 
+						    == 
+						    (3U 
+						     & (vlTOPp->io_instIn 
+							>> 0x10U)))
+						    ? vlTOPp->io_instIn
+						    : vlTOPp->InstAligner__DOT___GEN_8))
+						  : vlTOPp->InstAligner__DOT___GEN_8)));
     vlTOPp->InstAligner__DOT__case2 = __Vdly__InstAligner__DOT__case2;
-    vlTOPp->InstAligner__DOT___T = (1U & (~ (IData)(vlTOPp->InstAligner__DOT__case2)));
+    vlTOPp->InstAligner__DOT___T_7 = (1U & (~ (IData)(vlTOPp->InstAligner__DOT__case2)));
 }
 
 void VInstAligner::_settle__TOP__2(VInstAligner__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_PRINTF("    VInstAligner::_settle__TOP__2\n"); );
     VInstAligner* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->InstAligner__DOT___T = (1U & (~ (IData)(vlTOPp->InstAligner__DOT__case2)));
-    vlTOPp->InstAligner__DOT___GEN_3 = (((3U != (3U 
-						 & vlTOPp->io_instIn)) 
-					 & (3U == (3U 
-						   & (vlTOPp->io_instIn 
-						      >> 0x10U)))) 
-					| (IData)(vlTOPp->InstAligner__DOT__case2));
-    vlTOPp->io_instOut = ((IData)(vlTOPp->InstAligner__DOT__case2)
-			   ? ((IData)(vlTOPp->InstAligner__DOT__case2)
-			       ? ((0xffff0000U & (vlTOPp->io_instIn 
-						  << 0x10U)) 
-				  | (0xffffU & (vlTOPp->io_instIn 
-						>> 0x10U)))
-			       : vlTOPp->io_instIn)
-			   : (((3U != (3U & vlTOPp->io_instIn)) 
-			       & (3U == (3U & (vlTOPp->io_instIn 
-					       >> 0x10U))))
-			       ? (0xffffU & vlTOPp->io_instIn)
-			       : vlTOPp->io_instIn));
-    vlTOPp->io_pcOut = ((IData)(vlTOPp->InstAligner__DOT__case2)
-			 ? ((IData)(vlTOPp->InstAligner__DOT__case2)
-			     ? ((IData)(4U) + vlTOPp->io_pcIn)
-			     : vlTOPp->io_pcIn) : (
-						   ((3U 
-						     != 
-						     (3U 
-						      & vlTOPp->io_instIn)) 
-						    & (3U 
-						       == 
-						       (3U 
-							& (vlTOPp->io_instIn 
-							   >> 0x10U))))
-						    ? 
-						   ((IData)(2U) 
-						    + vlTOPp->io_pcIn)
-						    : vlTOPp->io_pcIn));
+    vlTOPp->InstAligner__DOT___T_7 = (1U & (~ (IData)(vlTOPp->InstAligner__DOT__case2)));
+    vlTOPp->InstAligner__DOT___GEN_14 = (((3U != (3U 
+						  & vlTOPp->io_instIn)) 
+					  & (3U == 
+					     (3U & 
+					      (vlTOPp->io_instIn 
+					       >> 0x10U)))) 
+					 | (IData)(vlTOPp->InstAligner__DOT__case2));
+    vlTOPp->InstAligner__DOT___GEN_10 = ((IData)(vlTOPp->InstAligner__DOT__case1)
+					  ? ((~ (IData)(vlTOPp->InstAligner__DOT__case1)) 
+					     & (IData)(vlTOPp->InstAligner__DOT__case1))
+					  : (((3U != 
+					       (3U 
+						& vlTOPp->io_instIn)) 
+					      & (3U 
+						 != 
+						 (3U 
+						  & (vlTOPp->io_instIn 
+						     >> 0x10U)))) 
+					     | (IData)(vlTOPp->InstAligner__DOT__case1)));
+    vlTOPp->InstAligner__DOT___GEN_8 = ((IData)(vlTOPp->InstAligner__DOT__case1)
+					 ? vlTOPp->InstAligner__DOT__instReg
+					 : (((3U != 
+					      (3U & vlTOPp->io_instIn)) 
+					     & (3U 
+						!= 
+						(3U 
+						 & (vlTOPp->io_instIn 
+						    >> 0x10U))))
+					     ? vlTOPp->io_instIn
+					     : vlTOPp->InstAligner__DOT__instReg));
+    vlTOPp->InstAligner__DOT___GEN_7 = ((IData)(vlTOPp->InstAligner__DOT__case1)
+					 ? ((IData)(vlTOPp->InstAligner__DOT__case1)
+					     ? (0xffffU 
+						& (vlTOPp->InstAligner__DOT__instReg 
+						   >> 0x10U))
+					     : vlTOPp->InstAligner__DOT__instReg)
+					 : (((3U != 
+					      (3U & vlTOPp->io_instIn)) 
+					     & (3U 
+						!= 
+						(3U 
+						 & (vlTOPp->io_instIn 
+						    >> 0x10U))))
+					     ? (0xffffU 
+						& vlTOPp->io_instIn)
+					     : vlTOPp->InstAligner__DOT__instReg));
+    vlTOPp->InstAligner__DOT___GEN_9 = ((IData)(vlTOPp->InstAligner__DOT__case1)
+					 ? ((IData)(vlTOPp->InstAligner__DOT__case1)
+					     ? ((IData)(2U) 
+						+ vlTOPp->io_pcIn)
+					     : vlTOPp->io_pcIn)
+					 : (((3U != 
+					      (3U & vlTOPp->io_instIn)) 
+					     & (3U 
+						!= 
+						(3U 
+						 & (vlTOPp->io_instIn 
+						    >> 0x10U))))
+					     ? ((IData)(2U) 
+						+ vlTOPp->io_pcIn)
+					     : vlTOPp->io_pcIn));
 }
 
 VL_INLINE_OPT void VInstAligner::_combo__TOP__3(VInstAligner__Syms* __restrict vlSymsp) {
     VL_DEBUG_IF(VL_PRINTF("    VInstAligner::_combo__TOP__3\n"); );
     VInstAligner* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
-    vlTOPp->InstAligner__DOT___GEN_3 = (((3U != (3U 
-						 & vlTOPp->io_instIn)) 
-					 & (3U == (3U 
-						   & (vlTOPp->io_instIn 
-						      >> 0x10U)))) 
-					| (IData)(vlTOPp->InstAligner__DOT__case2));
+    vlTOPp->InstAligner__DOT___GEN_14 = (((3U != (3U 
+						  & vlTOPp->io_instIn)) 
+					  & (3U == 
+					     (3U & 
+					      (vlTOPp->io_instIn 
+					       >> 0x10U)))) 
+					 | (IData)(vlTOPp->InstAligner__DOT__case2));
+    vlTOPp->InstAligner__DOT___GEN_10 = ((IData)(vlTOPp->InstAligner__DOT__case1)
+					  ? ((~ (IData)(vlTOPp->InstAligner__DOT__case1)) 
+					     & (IData)(vlTOPp->InstAligner__DOT__case1))
+					  : (((3U != 
+					       (3U 
+						& vlTOPp->io_instIn)) 
+					      & (3U 
+						 != 
+						 (3U 
+						  & (vlTOPp->io_instIn 
+						     >> 0x10U)))) 
+					     | (IData)(vlTOPp->InstAligner__DOT__case1)));
+    vlTOPp->InstAligner__DOT___GEN_8 = ((IData)(vlTOPp->InstAligner__DOT__case1)
+					 ? vlTOPp->InstAligner__DOT__instReg
+					 : (((3U != 
+					      (3U & vlTOPp->io_instIn)) 
+					     & (3U 
+						!= 
+						(3U 
+						 & (vlTOPp->io_instIn 
+						    >> 0x10U))))
+					     ? vlTOPp->io_instIn
+					     : vlTOPp->InstAligner__DOT__instReg));
+    vlTOPp->InstAligner__DOT___GEN_7 = ((IData)(vlTOPp->InstAligner__DOT__case1)
+					 ? ((IData)(vlTOPp->InstAligner__DOT__case1)
+					     ? (0xffffU 
+						& (vlTOPp->InstAligner__DOT__instReg 
+						   >> 0x10U))
+					     : vlTOPp->InstAligner__DOT__instReg)
+					 : (((3U != 
+					      (3U & vlTOPp->io_instIn)) 
+					     & (3U 
+						!= 
+						(3U 
+						 & (vlTOPp->io_instIn 
+						    >> 0x10U))))
+					     ? (0xffffU 
+						& vlTOPp->io_instIn)
+					     : vlTOPp->InstAligner__DOT__instReg));
+    vlTOPp->InstAligner__DOT___GEN_9 = ((IData)(vlTOPp->InstAligner__DOT__case1)
+					 ? ((IData)(vlTOPp->InstAligner__DOT__case1)
+					     ? ((IData)(2U) 
+						+ vlTOPp->io_pcIn)
+					     : vlTOPp->io_pcIn)
+					 : (((3U != 
+					      (3U & vlTOPp->io_instIn)) 
+					     & (3U 
+						!= 
+						(3U 
+						 & (vlTOPp->io_instIn 
+						    >> 0x10U))))
+					     ? ((IData)(2U) 
+						+ vlTOPp->io_pcIn)
+					     : vlTOPp->io_pcIn));
     vlTOPp->io_instOut = ((IData)(vlTOPp->InstAligner__DOT__case2)
 			   ? ((IData)(vlTOPp->InstAligner__DOT__case2)
 			       ? ((0xffff0000U & (vlTOPp->io_instIn 
 						  << 0x10U)) 
-				  | (0xffffU & (vlTOPp->io_instIn 
+				  | (0xffffU & (vlTOPp->InstAligner__DOT__instReg 
 						>> 0x10U)))
-			       : vlTOPp->io_instIn)
+			       : vlTOPp->InstAligner__DOT___GEN_7)
 			   : (((3U != (3U & vlTOPp->io_instIn)) 
 			       & (3U == (3U & (vlTOPp->io_instIn 
 					       >> 0x10U))))
 			       ? (0xffffU & vlTOPp->io_instIn)
-			       : vlTOPp->io_instIn));
+			       : vlTOPp->InstAligner__DOT___GEN_7));
     vlTOPp->io_pcOut = ((IData)(vlTOPp->InstAligner__DOT__case2)
 			 ? ((IData)(vlTOPp->InstAligner__DOT__case2)
 			     ? ((IData)(4U) + vlTOPp->io_pcIn)
-			     : vlTOPp->io_pcIn) : (
-						   ((3U 
-						     != 
-						     (3U 
-						      & vlTOPp->io_instIn)) 
-						    & (3U 
-						       == 
-						       (3U 
-							& (vlTOPp->io_instIn 
-							   >> 0x10U))))
-						    ? 
-						   ((IData)(2U) 
-						    + vlTOPp->io_pcIn)
-						    : vlTOPp->io_pcIn));
+			     : vlTOPp->InstAligner__DOT___GEN_9)
+			 : (((3U != (3U & vlTOPp->io_instIn)) 
+			     & (3U == (3U & (vlTOPp->io_instIn 
+					     >> 0x10U))))
+			     ? ((IData)(2U) + vlTOPp->io_pcIn)
+			     : vlTOPp->InstAligner__DOT___GEN_9));
+}
+
+void VInstAligner::_settle__TOP__4(VInstAligner__Syms* __restrict vlSymsp) {
+    VL_DEBUG_IF(VL_PRINTF("    VInstAligner::_settle__TOP__4\n"); );
+    VInstAligner* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
+    // Body
+    vlTOPp->io_instOut = ((IData)(vlTOPp->InstAligner__DOT__case2)
+			   ? ((IData)(vlTOPp->InstAligner__DOT__case2)
+			       ? ((0xffff0000U & (vlTOPp->io_instIn 
+						  << 0x10U)) 
+				  | (0xffffU & (vlTOPp->InstAligner__DOT__instReg 
+						>> 0x10U)))
+			       : vlTOPp->InstAligner__DOT___GEN_7)
+			   : (((3U != (3U & vlTOPp->io_instIn)) 
+			       & (3U == (3U & (vlTOPp->io_instIn 
+					       >> 0x10U))))
+			       ? (0xffffU & vlTOPp->io_instIn)
+			       : vlTOPp->InstAligner__DOT___GEN_7));
+    vlTOPp->io_pcOut = ((IData)(vlTOPp->InstAligner__DOT__case2)
+			 ? ((IData)(vlTOPp->InstAligner__DOT__case2)
+			     ? ((IData)(4U) + vlTOPp->io_pcIn)
+			     : vlTOPp->InstAligner__DOT___GEN_9)
+			 : (((3U != (3U & vlTOPp->io_instIn)) 
+			     & (3U == (3U & (vlTOPp->io_instIn 
+					     >> 0x10U))))
+			     ? ((IData)(2U) + vlTOPp->io_pcIn)
+			     : vlTOPp->InstAligner__DOT___GEN_9));
 }
 
 void VInstAligner::_eval(VInstAligner__Syms* __restrict vlSymsp) {
@@ -204,6 +356,7 @@ void VInstAligner::_eval_settle(VInstAligner__Syms* __restrict vlSymsp) {
     VInstAligner* __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp->TOPp;
     // Body
     vlTOPp->_settle__TOP__2(vlSymsp);
+    vlTOPp->_settle__TOP__4(vlSymsp);
 }
 
 VL_INLINE_OPT QData VInstAligner::_change_request(VInstAligner__Syms* __restrict vlSymsp) {
@@ -224,9 +377,15 @@ void VInstAligner::_ctor_var_reset() {
     io_instOut = VL_RAND_RESET_I(32);
     io_pcIn = VL_RAND_RESET_I(32);
     io_pcOut = VL_RAND_RESET_I(32);
+    InstAligner__DOT__case1 = VL_RAND_RESET_I(1);
     InstAligner__DOT__case2 = VL_RAND_RESET_I(1);
-    InstAligner__DOT___T = VL_RAND_RESET_I(1);
-    InstAligner__DOT___GEN_3 = VL_RAND_RESET_I(1);
+    InstAligner__DOT__instReg = VL_RAND_RESET_I(32);
+    InstAligner__DOT___GEN_7 = VL_RAND_RESET_I(32);
+    InstAligner__DOT___GEN_8 = VL_RAND_RESET_I(32);
+    InstAligner__DOT___GEN_9 = VL_RAND_RESET_I(32);
+    InstAligner__DOT___GEN_10 = VL_RAND_RESET_I(1);
+    InstAligner__DOT___T_7 = VL_RAND_RESET_I(1);
+    InstAligner__DOT___GEN_14 = VL_RAND_RESET_I(1);
     __Vclklast__TOP__clock = VL_RAND_RESET_I(1);
     __Vm_traceActivity = VL_RAND_RESET_I(32);
 }
