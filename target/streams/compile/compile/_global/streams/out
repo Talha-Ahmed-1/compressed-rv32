@@ -1,6 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/InstAligner.scala:46:26: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Int(1)[0m
-[0m[[0m[31merror[0m] [0m[0m required: chisel3.Data[0m
-[0m[[0m[31merror[0m] [0m[0m                case2 := 1[0m
-[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/talha/compressed-rv32/src/main/scala/InstAligner.scala:31:29: overloaded method value apply with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  [T <: chisel3.Data](enq: chisel3.util.Valid[T], latency: Int)(implicit compileOptions: chisel3.CompileOptions)chisel3.util.Valid[T] <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  [T <: chisel3.Data](enqValid: chisel3.Bool, enqBits: T)(implicit compileOptions: chisel3.CompileOptions)chisel3.util.Valid[T][0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (chisel3.UInt, chisel3.UInt)[0m
+[0m[[0m[31merror[0m] [0m[0m                io.pcOut := Pipe(io.pcIn + 2.U, 2.U)[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

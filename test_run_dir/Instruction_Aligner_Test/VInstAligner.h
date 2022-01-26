@@ -38,8 +38,12 @@ VL_MODULE(VInstAligner) {
     VL_SIG8(InstAligner__DOT___GEN_10,0,0);
     VL_SIG8(InstAligner__DOT___T_7,0,0);
     VL_SIG8(InstAligner__DOT___GEN_14,0,0);
-    //char	__VpadToAlign29[3];
+    //char	__VpadToAlign29[1];
+    VL_SIG16(InstAligner__DOT__io_instOut_REG,15,0);
     VL_SIG(InstAligner__DOT__instReg,31,0);
+    VL_SIG(InstAligner__DOT__instReg_REG,31,0);
+    VL_SIG(InstAligner__DOT__io_pcOut_REG,31,0);
+    VL_SIG(InstAligner__DOT__io_pcOut_REG_1,31,0);
     VL_SIG(InstAligner__DOT___GEN_7,31,0);
     VL_SIG(InstAligner__DOT___GEN_8,31,0);
     VL_SIG(InstAligner__DOT___GEN_9,31,0);
@@ -47,11 +51,12 @@ VL_MODULE(VInstAligner) {
     // LOCAL VARIABLES
     // Internals; generally not touched by application code
     VL_SIG8(__Vclklast__TOP__clock,0,0);
-    //char	__VpadToAlign53[3];
+    //char	__VpadToAlign65[3];
     VL_SIG(__Vm_traceActivity,31,0);
     
     // INTERNAL VARIABLES
     // Internals; generally not touched by application code
+    //char	__VpadToAlign76[4];
     VInstAligner__Syms*	__VlSymsp;		// Symbol table
     
     // PARAMETERS

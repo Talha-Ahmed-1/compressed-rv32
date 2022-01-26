@@ -75,7 +75,9 @@ VL_INLINE_OPT void VInstAligner::_sequent__TOP__1(VInstAligner__Syms* __restrict
     //char	__VpadToAlign5[3];
     // Body
     __Vdly__InstAligner__DOT__case2 = vlTOPp->InstAligner__DOT__case2;
-    // ALWAYS at InstAligner.v:44
+    // ALWAYS at InstAligner.v:97
+    vlTOPp->InstAligner__DOT__io_pcOut_REG_1 = vlTOPp->InstAligner__DOT__io_pcOut_REG;
+    // ALWAYS at InstAligner.v:54
     vlTOPp->InstAligner__DOT__case1 = ((~ (IData)(vlTOPp->reset)) 
 				       & ((IData)(vlTOPp->InstAligner__DOT___T_7)
 					   ? (IData)(vlTOPp->InstAligner__DOT___GEN_10)
@@ -139,6 +141,11 @@ VL_INLINE_OPT void VInstAligner::_sequent__TOP__1(VInstAligner__Syms* __restrict
 						    ? vlTOPp->io_instIn
 						    : vlTOPp->InstAligner__DOT___GEN_8))
 						  : vlTOPp->InstAligner__DOT___GEN_8)));
+    vlTOPp->InstAligner__DOT__io_instOut_REG = (0xffffU 
+						& vlTOPp->io_instIn);
+    vlTOPp->InstAligner__DOT__instReg_REG = vlTOPp->io_instIn;
+    vlTOPp->InstAligner__DOT__io_pcOut_REG = ((IData)(2U) 
+					      + vlTOPp->io_pcIn);
     vlTOPp->InstAligner__DOT__case2 = __Vdly__InstAligner__DOT__case2;
     vlTOPp->InstAligner__DOT___T_7 = (1U & (~ (IData)(vlTOPp->InstAligner__DOT__case2)));
 }
@@ -176,7 +183,7 @@ void VInstAligner::_settle__TOP__2(VInstAligner__Syms* __restrict vlSymsp) {
 						(3U 
 						 & (vlTOPp->io_instIn 
 						    >> 0x10U))))
-					     ? vlTOPp->io_instIn
+					     ? vlTOPp->InstAligner__DOT__instReg_REG
 					     : vlTOPp->InstAligner__DOT__instReg));
     vlTOPp->InstAligner__DOT___GEN_7 = ((IData)(vlTOPp->InstAligner__DOT__case1)
 					 ? ((IData)(vlTOPp->InstAligner__DOT__case1)
@@ -191,8 +198,7 @@ void VInstAligner::_settle__TOP__2(VInstAligner__Syms* __restrict vlSymsp) {
 						(3U 
 						 & (vlTOPp->io_instIn 
 						    >> 0x10U))))
-					     ? (0xffffU 
-						& vlTOPp->io_instIn)
+					     ? (IData)(vlTOPp->InstAligner__DOT__io_instOut_REG)
 					     : vlTOPp->InstAligner__DOT__instReg));
     vlTOPp->InstAligner__DOT___GEN_9 = ((IData)(vlTOPp->InstAligner__DOT__case1)
 					 ? ((IData)(vlTOPp->InstAligner__DOT__case1)
@@ -206,8 +212,7 @@ void VInstAligner::_settle__TOP__2(VInstAligner__Syms* __restrict vlSymsp) {
 						(3U 
 						 & (vlTOPp->io_instIn 
 						    >> 0x10U))))
-					     ? ((IData)(2U) 
-						+ vlTOPp->io_pcIn)
+					     ? vlTOPp->InstAligner__DOT__io_pcOut_REG_1
 					     : vlTOPp->io_pcIn));
 }
 
@@ -243,7 +248,7 @@ VL_INLINE_OPT void VInstAligner::_combo__TOP__3(VInstAligner__Syms* __restrict v
 						(3U 
 						 & (vlTOPp->io_instIn 
 						    >> 0x10U))))
-					     ? vlTOPp->io_instIn
+					     ? vlTOPp->InstAligner__DOT__instReg_REG
 					     : vlTOPp->InstAligner__DOT__instReg));
     vlTOPp->InstAligner__DOT___GEN_7 = ((IData)(vlTOPp->InstAligner__DOT__case1)
 					 ? ((IData)(vlTOPp->InstAligner__DOT__case1)
@@ -258,8 +263,7 @@ VL_INLINE_OPT void VInstAligner::_combo__TOP__3(VInstAligner__Syms* __restrict v
 						(3U 
 						 & (vlTOPp->io_instIn 
 						    >> 0x10U))))
-					     ? (0xffffU 
-						& vlTOPp->io_instIn)
+					     ? (IData)(vlTOPp->InstAligner__DOT__io_instOut_REG)
 					     : vlTOPp->InstAligner__DOT__instReg));
     vlTOPp->InstAligner__DOT___GEN_9 = ((IData)(vlTOPp->InstAligner__DOT__case1)
 					 ? ((IData)(vlTOPp->InstAligner__DOT__case1)
@@ -273,8 +277,7 @@ VL_INLINE_OPT void VInstAligner::_combo__TOP__3(VInstAligner__Syms* __restrict v
 						(3U 
 						 & (vlTOPp->io_instIn 
 						    >> 0x10U))))
-					     ? ((IData)(2U) 
-						+ vlTOPp->io_pcIn)
+					     ? vlTOPp->InstAligner__DOT__io_pcOut_REG_1
 					     : vlTOPp->io_pcIn));
     vlTOPp->io_instOut = ((IData)(vlTOPp->InstAligner__DOT__case2)
 			   ? ((IData)(vlTOPp->InstAligner__DOT__case2)
@@ -380,6 +383,10 @@ void VInstAligner::_ctor_var_reset() {
     InstAligner__DOT__case1 = VL_RAND_RESET_I(1);
     InstAligner__DOT__case2 = VL_RAND_RESET_I(1);
     InstAligner__DOT__instReg = VL_RAND_RESET_I(32);
+    InstAligner__DOT__io_instOut_REG = VL_RAND_RESET_I(16);
+    InstAligner__DOT__instReg_REG = VL_RAND_RESET_I(32);
+    InstAligner__DOT__io_pcOut_REG = VL_RAND_RESET_I(32);
+    InstAligner__DOT__io_pcOut_REG_1 = VL_RAND_RESET_I(32);
     InstAligner__DOT___GEN_7 = VL_RAND_RESET_I(32);
     InstAligner__DOT___GEN_8 = VL_RAND_RESET_I(32);
     InstAligner__DOT___GEN_9 = VL_RAND_RESET_I(32);
