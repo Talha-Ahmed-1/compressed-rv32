@@ -12,50 +12,67 @@ class AlignerIO extends Bundle {
 class InstAligner extends Module{
     val io = IO(new AlignerIO)
 
-
     val case1 = RegInit(0.B)
     val case2 = RegInit(0.B)
-    val instReg = RegInit(io.instIn)
-    io.pcOut := io.pcIn
-    io.instOut := instReg
-    // io.instValid := false.B
+    val case3 = RegInit(0.B)
+    val pcReg = RegInit(0.U(32.W))
+    val instReg = RegInit(0.U(32.W))
 
-    // when(case1 && case2 && io.instIn(1,0) === 3.U){io.instOut := RegNext(instReg)}
+    io.instOut := io.instIn
+    io.pcOut := io.pcIn + 4.U
 
     switch(case1){
         is (0.B){
             when(io.instIn(1,0) =/= 3.U && io.instIn(17,16) =/= 3.U){
-                io.instOut := RegNext(io.instIn(15,0))
+                io.instOut := io.instIn(15,0)
                 // io.instValid := true.B
-                instReg := RegNext(io.instIn)
-                io.pcOut := RegNext(RegNext(io.pcIn + 2.U))
+                instReg := io.instIn
+                io.pcOut := io.pcIn + 2.U
                 case1 := true.B
             }
+            // .otherwise{
+            //     io.instOut := io.instIn
+            //     io.pcOut := io.pcIn + 4.U
+            // }
         }
         is (1.B){
             io.instOut := instReg(31,16)
             // io.instValid := true.B
             io.pcOut := io.pcIn + 2.U
             case1 := false.B
-
         }
     }
-
     switch(case2){
         is (0.B){
-            when(io.instIn(1,0) =/= 3.U && io.instIn(17,16) === 3.U){
+            when(io.instIn(17,16) === 3.U && io.instIn(1,0) =/= 3.U && case3 === 0.B){
                 io.instOut := io.instIn(15,0)
                 // io.instValid := true.B
                 instReg := io.instIn
                 io.pcOut := io.pcIn + 2.U
                 case2 := true.B
+                case3 := true.B
+            }
+            .elsewhen(instReg(17,16) =/= 3.U && case3 === 1.B){
+                io.instOut := instReg(31,16)
+                // io.instValid := true.B
+                // instReg := io.instIn
+                io.pcOut := io.pcIn + 2.U
+                case1 := false.B
+                case3 := false.B
             }
         }
         is (1.B){
             io.instOut := Cat(io.instIn(15,0), instReg(31,16))
             // io.instValid := true.B
             io.pcOut := io.pcIn + 4.U
+            // when(io.instIn(1,0) === 3.U && io.instIn(17,16) =/= 3.U){
+            //     io.instOut := io.instIn(31,16)
+            //     // io.instValid := true.B
+            //     // instReg := io.instIn
+            //     io.pcOut := io.pcIn + 2.U
+            //     case1 := false.B}
             when (io.instIn(17,16) =/= 3.U){
+                instReg := io.instIn
                 case1 := false.B
                 case2 := false.B
             }.elsewhen(io.instIn(17,16) === 3.U){
@@ -69,25 +86,11 @@ class InstAligner extends Module{
         }
     }
 
-    // when(wire1){
-    //     wire1 := 0.U
-    //     io.instOut := instReg(31,16)
-    //     io.pcOut := io.pcIn + 2.U
 
-    // }.elsewhen(io.instIn(1,0) =/= 3.U && io.instIn(17,16) =/= 3.U && ~wire1){
-    //     io.instOut := io.instIn(15,0)
-    //     instReg := io.instIn
-    //     io.pcOut := io.pcIn + 2.U
-    //     wire1 := 1.B}
-    // }.elsewhen(wire2 === 1.U){
-    //     wire2 := 0.U
-    //     io.instOut := Cat(io.instIn(15,0) + instReg(15,0))
-    //     io.pcOut := io.pcIn + 4.U
-    // }.elsewhen(io.instIn(1,0) === 3.U && io.instIn(17,16) =/= 3.U && wire2 === 0.U){
-    //     io.instOut := instIn(15,0)
-    //     instReg := instIn
-    //     pcOut := pcIn + 2.U
-    //     wire2 := 1
-    // }
+
+    // io.instOut := RegNext(io.instIn)
+    // val r = RegInit(0.U(32.W))
+    // r := io.pcIn
+    // io.pcOut := r
 }
 
