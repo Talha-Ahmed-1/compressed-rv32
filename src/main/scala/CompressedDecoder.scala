@@ -3,13 +3,9 @@ import chisel3.util._
 
 object compressed{
     def CLW       = BitPat("b010???????????00")
-    // def CFLW      = BitPat("b011???????????00")
     def CLWSP     = BitPat("b010???????????10")
-    // def CFLWSP    = BitPat("b011???????????00")
     def CSW       = BitPat("b110???????????00")
-    // def CFSW      = BitPat("b111???????????00")
     def CSWSP     = BitPat("b110???????????10")
-    // def CFSWSP    = BitPat("b111???????????10")
     def CJ        = BitPat("b101???????????01")
     def CJAL      = BitPat("b001???????????01")
     def CJR       = BitPat("b1000?????0000010")
@@ -52,25 +48,28 @@ class CompressedDecoder extends Module{
     val RD_RS1 = Wire(UInt(5.W))
     RD_RS1 := io.instIn(9,7) + 8.U
 
+    val iImm = Wire(UInt(5.W))
+    iImm := Cat(io.instIn(12), io.instIn(6,2))
+
     // def LW      = Cat(io.instIn(5), io.instIn(12,10), io.instIn(6), "b00".U, RD_RS1, "b010".U, RS1, "b0000011".U)
     // def SW      = Cat("b00000".U, io.instIn(5), io.instIn(12), RS1, RD_RS1, "b010".U, io.instIn(11,10), io.instIn(6), "b00".U, "b0100011".U)
+    def ADDI    = Cat(iImm, RD_RS1, ("b000".U)(3.W), RD_RS1, "b0010011".U)
+    def ANDI    = Cat(iImm, RD_RS1, ("b111".U)(3.W), RD_RS1, "b0010011".U)
+    def ADD     = Cat("b0000000".U, RS2, RD_RS1, ("b000".U)(3.W), RD_RS1, ("b0110011".U)(7.W))
     def AND     = Cat("b0000000".U, RS2, RD_RS1, "b111".U, RD_RS1, ("b0110011".U)(7.W))
     def OR      = Cat("b0000000".U, RS2, RD_RS1, "b110".U, RD_RS1, ("b0110011".U)(7.W))
     def XOR     = Cat("b0000000".U, RS2, RD_RS1, "b100".U, RD_RS1, ("b0110011".U)(7.W))
     def SUB     = Cat("b0100000".U, RS2, RD_RS1, ("b000".U)(3.W), RD_RS1, ("b0110011".U)(7.W))
+    def MV     = Cat("b0000000".U, RS2, RD_RS1, ("b000".U)(3.W), RD_RS1, ("b0110011".U)(7.W))
     def NOP     = "h00000013".U
     def EBREAK  = "h00100073".U
     def ILLEGAL = 0.U
 
     val cases = Array(
         // (io.instIn(15,0) === CLW) -> LW,
-        // (io.instIn(15,0) === CFLW) -> ,
         // (io.instIn(15,0) === CLWSP) -> ,
-        // (io.instIn(15,0) === CFLWSP) -> ,
         // (io.instIn(15,0) === CSW) -> SW,
-        // (io.instIn(15,0) === CFSW) -> ,
-        // (io.instIn(15,0) === CSWSP) -> ,
-        // (io.instIn(15,0) === CFSWSP) -> ,
+        // (io.instIn(15,0) === CSWSP) -> ,        
         // (io.instIn(15,0) === CJ) -> ,
         // (io.instIn(15,0) === CJAL) -> ,
         // (io.instIn(15,0) === CJR) -> ,
@@ -79,15 +78,15 @@ class CompressedDecoder extends Module{
         // (io.instIn(15,0) === CBNEQZ) -> ,
         // (io.instIn(15,0) === CLI) -> ,
         // (io.instIn(15,0) === CLUI) -> ,
-        // (io.instIn(15,0) === CADDI) -> ,
+        (io.instIn(15,0) === CADDI) -> ADDI,
         // (io.instIn(15,0) === CADDI16SP) -> ,
         // (io.instIn(15,0) === CADDI4SPN) -> ,
         // (io.instIn(15,0) === CSLLI) -> ,
         // (io.instIn(15,0) === CSRLI) -> ,
         // (io.instIn(15,0) === CSRAI) -> ,
-        // (io.instIn(15,0) === CANDI) -> ,
-        // (io.instIn(15,0) === CMV) -> Cat("b0000000".U, RD_RS1, RS1, "b000".U, RD_RS1, "b0110011".U),
-        // (io.instIn(15,0) === CADD) -> Cat("b0000000".U, RD_RS1, RS1, "b000".U, RD_RS1, "b0110011".U),
+        (io.instIn(15,0) === CANDI) -> ANDI,
+        (io.instIn(15,0) === CMV) -> MV,
+        (io.instIn(15,0) === CADD) -> ADD,
         (io.instIn(15,0) === CAND) -> AND,
         (io.instIn(15,0) === COR) -> OR,
         (io.instIn(15,0) === CXOR) -> XOR,
